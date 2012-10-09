@@ -1,6 +1,6 @@
-if (Object.const_defined?("Formtastic") && Gem.loaded_specs["formtastic"].version.version[0,1] == "2")
+if (Object.const_defined?("Simpleform") && Gem.loaded_specs["simple_form"].version.version[0,1] == "2")
     
-    class RichPickerInput < ::Formtastic::Inputs::StringInput
+    class RichPickerInput < ::SimpleForm::Inputs::StringInput
 
       def to_html 
         scope_type = object_name
@@ -24,7 +24,7 @@ if (Object.const_defined?("Formtastic") && Gem.loaded_specs["formtastic"].versio
           field  <<
           " <a href='#{Rich.editor[:richBrowserUrl]}' class='button'>#{I18n.t('picker_browse')}</a>".html_safe <<
           "</br></br><img class='rich-image-preview' src='#{@object.send(method).nil? ? editor_options[:placeholder_image] : @object.send(method) }' style='height: 100px' />".html_safe <<
-          "<script>$(function(){$('##{input_html_options[:id]}_input a').click(function(e){ e.preventDefault(); assetPicker.showFinder('##{input_html_options[:id]}', #{editor_options.to_json.html_safe})})})</script>".html_safe
+          "<script>alert('hello');$(function(){$('##{input_html_options[:id]}_input a').click(function(e){ e.preventDefault(); assetPicker.showFinder('##{input_html_options[:id]}', #{editor_options.to_json.html_safe})})})</script>".html_safe
 
         end
       end

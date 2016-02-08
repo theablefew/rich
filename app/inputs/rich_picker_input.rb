@@ -1,4 +1,4 @@
-if (Object.const_defined?("SimpleForm") && Gem.loaded_specs["simple_form"].version.version[0,1] == "2")
+if (Object.const_defined?("SimpleForm") && Gem.loaded_specs["simple_form"].version.version[0,1].to_i >= 2)
  class RichPickerInput < SimpleForm::Inputs::Base
   def input 
    scope_type = object_name
